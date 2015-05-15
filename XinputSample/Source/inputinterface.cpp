@@ -151,10 +151,10 @@ bool InputInterface::getKeyboardLastPressedKey(unsigned short& KeyCode){
 }
 
 
-bool InputInterface::getXInputState(XINPUT_STATE& state, const int index){
+bool InputInterface::getXInputState(const int index, XINPUT_STATE& state){
 	return XInputGetState(index, &state) != ERROR_DEVICE_NOT_CONNECTED;
 }
-bool InputInterface::setXInputRumble(const short left_motor, const short right_motor, const int index){
+bool InputInterface::setXInputRumble(const int index, const short left_motor, const short right_motor){
 	XINPUT_VIBRATION rumble = { left_motor, right_motor };
 	return XInputSetState(index, &rumble) != ERROR_DEVICE_NOT_CONNECTED;
 }
