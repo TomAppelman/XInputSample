@@ -114,8 +114,8 @@ public:
 	bool	getKeyboardLastPressedKey(unsigned short& KeyCode);
 
 
-	bool	getXInputState(XINPUT_STATE& state, const int index);
-	bool	setXInputRumble(const short left_motor, const short right_motor, const int index);
+	bool	getXInputState(const int index, XINPUT_STATE& state);
+	bool	setXInputRumble(const int index, const short left_motor, const short right_motor);
 
 private:
 	Mutex		m_Mutex;
